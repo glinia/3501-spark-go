@@ -11,6 +11,7 @@ public class DriveWithJoysticks extends CommandBase {
         double forward = oi.getForwardR();
         double twist   = oi.getTwistR();
 
+        // option to lock twist for alignment
         if (oi.getRightPressed(3, 4, 5, 6))
             twist = 0;
 
