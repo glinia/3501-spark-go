@@ -1,6 +1,7 @@
 package org.usfirst.frc.team3501.robot.subsystems;
 
 import org.usfirst.frc.team3501.robot.RobotMap;
+import org.usfirst.frc.team3501.robot.commands.DriveWithJoysticks;
 
 import edu.wpi.first.wpilibj.CANJaguar;
 import edu.wpi.first.wpilibj.RobotDrive;
@@ -8,7 +9,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Drivetrain extends Subsystem {
 
-    RobotDrive robotDrive;
+    private RobotDrive robotDrive;
 
     public Drivetrain() {
         CANJaguar frontLeft  = new CANJaguar(RobotMap.FRONT_LEFT_ADDRESS);
@@ -46,6 +47,8 @@ public class Drivetrain extends Subsystem {
         return (x + Math.signum(x) * Math.sqrt(Math.abs(x))) / 2;
     }
 
-    public void initDefaultCommand() {}
+    public void initDefaultCommand() {
+        setDefaultCommand(new DriveWithJoysticks());
+    }
 }
 

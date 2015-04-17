@@ -5,8 +5,10 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-import org.usfirst.frc.team3501.robot.commands.*;
+import org.usfirst.frc.team3501.robot.autons.*;
 import org.usfirst.frc.team3501.robot.subsystems.*;
 
 public class Robot extends IterativeRobot {
@@ -17,14 +19,14 @@ public class Robot extends IterativeRobot {
 
 	public static OI oi;
 
-    Command autonomousCommand;
+	private SendableChooser autoChooser;
+
+    private Command autonomousCommand;
 
     public void robotInit() {
 		oi = new OI();
 
-		double time = 1.2;
-		double speed = 0.7;
-        autonomousCommand = new DriveForward(time, speed);
+		chooseAuto();
     }
 
 	public void disabledPeriodic() {
@@ -32,6 +34,7 @@ public class Robot extends IterativeRobot {
 	}
 
     public void autonomousInit() {
+        autonomousCommand = (Command) autoChooser.getSelected();
         autonomousCommand.start();
     }
 
@@ -45,11 +48,18 @@ public class Robot extends IterativeRobot {
 
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
-
-
     }
 
     public void testPeriodic() {
         LiveWindow.run();
+    }
+
+    private void chooseAuto() {
+        autoChooser = new SendableChooser();
+
+        autoChooser.addDefault("Drive over step", new DriveOverStep());
+        autoChooser.addObject("Drive past step",  new DrivePastStep());
+
+        SmartDashboard.putData("Auto Mode", autoChooser);
     }
 }

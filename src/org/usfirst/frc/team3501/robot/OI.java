@@ -13,11 +13,11 @@ public class OI {
         right.whenReleased(1, new OpenClaw());
     }
 
-    public double getForwardSpeed() {
+    public double getForward() {
         return right.getY();
     }
 
-    public double getTwistSpeed() {
+    public double getTwist() {
         return right.getTwist();
     }
 }

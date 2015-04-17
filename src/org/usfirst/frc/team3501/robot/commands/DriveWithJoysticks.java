@@ -8,7 +8,7 @@ public class DriveWithJoysticks extends CommandBase {
     }
 
     protected void execute() {
-        drivetrain.drive(oi.getForwardSpeed(), oi.getTwistSpeed());
+        drivetrain.drive(oi.getForward(), oi.getTwist());
     }
 
     protected boolean isFinished() {
