@@ -1,6 +1,7 @@
 package org.usfirst.frc.team3501.robot.subsystems;
 
 import org.usfirst.frc.team3501.robot.RobotMap;
+import org.usfirst.frc.team3501.robot.commands.MoveArm;
 
 import edu.wpi.first.wpilibj.CANJaguar;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -17,6 +18,10 @@ public class Arm extends Subsystem {
     public void set(double speed) {
         left.set(-speed);
         right.set(speed);
+    }
+
+    public void setFromJoystick(double speed) {
+        set(getSpeedFromJoystick(speed));
     }
 
     public void moveLeft(double speed) {
@@ -36,6 +41,7 @@ public class Arm extends Subsystem {
         return speed;
     }
 
-    public void initDefaultCommand() {}
+    public void initDefaultCommand() {
+        setDefaultCommand(new MoveArm());
+    }
 }
-

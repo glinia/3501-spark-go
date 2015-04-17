@@ -21,4 +21,3 @@ public class Pneumatics extends Subsystem {
 
     public void initDefaultCommand() {}
 }
-

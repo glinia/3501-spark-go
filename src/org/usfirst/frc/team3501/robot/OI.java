@@ -3,7 +3,7 @@ package org.usfirst.frc.team3501.robot;
 import org.usfirst.frc.team3501.robot.commands.*;
 
 public class OI {
-    public Joystick left, right;
+    private Joystick left, right;
 
     public OI() {
         left  = new Joystick(RobotMap.LEFT_JOYSTICK_PORT);
@@ -13,11 +13,15 @@ public class OI {
         right.whenReleased(1, new OpenClaw());
     }
 
-    public double getForward() {
+    public double getForwardL() {
+        return left.getY();
+    }
+
+    public double getForwardR() {
         return right.getY();
     }
 
-    public double getTwist() {
+    public double getTwistR() {
         return right.getTwist();
     }
 }
