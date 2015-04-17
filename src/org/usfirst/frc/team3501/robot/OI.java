@@ -11,6 +11,12 @@ public class OI {
 
         right.whenPressed(1, new CloseClaw());
         right.whenReleased(1, new OpenClaw());
+
+        right.whenPressed(11, new TurnOffCompressor());
+        right.whenPressed(12, new TurnOffCompressor());
+
+        right.whenPressed(7, new TurnOnCompressor());
+        right.whenPressed(8, new TurnOnCompressor());
     }
 
     public double getForwardL() {

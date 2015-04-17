@@ -14,6 +14,8 @@ public abstract class CommandBase extends Command {
     protected static Arm arm;
     protected static Claw claw;
 
+    protected static Pneumatics pneumatics;
+
     public CommandBase(String commandName) {
         super(commandName);
 
@@ -22,6 +24,8 @@ public abstract class CommandBase extends Command {
         drivetrain = Robot.drivetrain;
         arm        = Robot.arm;
         claw       = Robot.claw;
+
+        pneumatics = Robot.pneumatics;
     }
 
     protected void initialize() {}
