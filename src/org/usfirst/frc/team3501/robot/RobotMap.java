@@ -27,5 +27,6 @@ public class RobotMap {
 
     // auton
     public static final double OVER_STEP_TIME = 1.2, OVER_STEP_SPEED = 0.7,
-                               PAST_STEP_TIME = 1.5, PAST_STEP_SPEED = 0.5;
+                               PAST_STEP_TIME = 1.5, PAST_STEP_SPEED = 0.5,
+                               PICKUP_TIME    = 1.4, PICKUP_SPEED = 0.5;
 }

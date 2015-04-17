@@ -73,8 +73,9 @@ public class Robot extends IterativeRobot {
     private void chooseAuto() {
         autoChooser = new SendableChooser();
 
-        autoChooser.addDefault("Drive over step", new DriveOverStep());
-        autoChooser.addObject("Drive past step",  new DrivePastStep());
+        autoChooser.addDefault("Pick up container", new ContainerOverStep());
+        autoChooser.addObject("Drive over step",    new DriveOverStep());
+        autoChooser.addObject("Drive past step",    new DrivePastStep());
 
         SmartDashboard.putData("Auto Mode", autoChooser);
     }

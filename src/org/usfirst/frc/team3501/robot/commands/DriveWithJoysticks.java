@@ -8,7 +8,13 @@ public class DriveWithJoysticks extends CommandBase {
     }
 
     protected void execute() {
-        drivetrain.drive(oi.getForwardR(), oi.getTwistR());
+        double forward = oi.getForwardR();
+        double twist   = oi.getTwistR();
+
+        if (oi.getRightPressed(3, 4, 5, 6))
+            twist = 0;
+
+        drivetrain.drive(forward, twist);
     }
 
     protected boolean isFinished() {

@@ -12,7 +12,13 @@ public class DriveOverStep extends CommandBase {
         requires(drivetrain);
 
         setTimeout(RobotMap.OVER_STEP_TIME);
-        this.speed = RobotMap.OVER_STEP_SPEED;
+        speed = RobotMap.OVER_STEP_SPEED;
+    }
+
+    // TODO: this is an ugly "solution"
+    public DriveOverStep(int coef) {
+        this();
+        this.speed *= coef;
     }
 
     protected void execute() {

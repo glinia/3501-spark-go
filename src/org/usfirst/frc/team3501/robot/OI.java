@@ -1,5 +1,7 @@
 package org.usfirst.frc.team3501.robot;
 
+import java.util.Arrays;
+
 import org.usfirst.frc.team3501.robot.commands.*;
 
 public class OI {
@@ -39,5 +41,9 @@ public class OI {
 
     public double getTwistR() {
         return right.getTwist();
+    }
+
+    public boolean getRightPressed(int... buttons) {
+        return Arrays.stream(buttons).anyMatch(b -> right.get(b));
     }
 }

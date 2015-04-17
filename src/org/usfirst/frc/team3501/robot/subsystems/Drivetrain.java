@@ -34,6 +34,10 @@ public class Drivetrain extends Subsystem {
                 false);
     }
 
+    public void driveRaw(double forward, double twist) {
+        robotDrive.arcadeDrive(forward, twist, false);
+    }
+
     public void goForward(double speed) {
         robotDrive.arcadeDrive(speed, 0);
     }

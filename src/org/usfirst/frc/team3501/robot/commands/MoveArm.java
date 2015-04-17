@@ -8,7 +8,7 @@ public class MoveArm extends CommandBase {
     }
 
     protected void execute() {
-        arm.setFromJoystick(oi.getForwardL());
+        arm.setFromJoystick(-oi.getForwardL());
     }
 
     protected boolean isFinished() {
