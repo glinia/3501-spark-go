@@ -23,6 +23,8 @@ public class RobotMap {
     // arm
     public static final int LEFT_WINCH_ADDRESS = 2, RIGHT_WINCH_ADDRESS = 7;
 
+    public static final double ARM_ADJUST_SPEED = 0.3;
+
     // auton
     public static final double OVER_STEP_TIME = 1.2, OVER_STEP_SPEED = 0.7,
                                PAST_STEP_TIME = 1.5, PAST_STEP_SPEED = 0.5;

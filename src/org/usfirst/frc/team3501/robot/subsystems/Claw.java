@@ -22,5 +22,13 @@ public class Claw extends Subsystem {
         piston.set(RobotMap.CLOSED);
     }
 
+    public boolean isOpen() {
+        return piston.get().equals(RobotMap.OPEN);
+    }
+
+    public boolean isClosed() {
+        return piston.get().equals(RobotMap.CLOSED);
+    }
+
     public void initDefaultCommand() {}
 }

@@ -12,11 +12,21 @@ public class OI {
         right.whenPressed(1, new CloseClaw());
         right.whenReleased(1, new OpenClaw());
 
+        right.whenPressed(2, new ToggleClaw());
+
         right.whenPressed(11, new TurnOffCompressor());
         right.whenPressed(12, new TurnOffCompressor());
 
         right.whenPressed(7, new TurnOnCompressor());
         right.whenPressed(8, new TurnOnCompressor());
+
+        // potential bug point: this should "Just Work" because as soon as
+        // command stops running, left stick pos at 0 should take over...
+        // if that is not the case, arm will continue indefinitely.
+        left.whileHeld(7,  new TensionLeftWinch(RobotMap.ARM_ADJUST_SPEED));
+        left.whileHeld(6,  new TensionLeftWinch(-RobotMap.ARM_ADJUST_SPEED));
+        left.whileHeld(11, new TensionRightWinch(RobotMap.ARM_ADJUST_SPEED));
+        left.whileHeld(10, new TensionRightWinch(-RobotMap.ARM_ADJUST_SPEED));
     }
 
     public double getForwardL() {

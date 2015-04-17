@@ -25,4 +25,8 @@ public class Joystick extends edu.wpi.first.wpilibj.Joystick {
     public void whenReleased(int button, Command c) {
         buttons.get(button).whenReleased(c);
     }
+
+    public void whileHeld(int button, Command c) {
+        buttons.get(button).whileHeld(c);
+    }
 }

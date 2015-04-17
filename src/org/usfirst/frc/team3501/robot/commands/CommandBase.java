@@ -5,6 +5,7 @@ import org.usfirst.frc.team3501.robot.Robot;
 import org.usfirst.frc.team3501.robot.subsystems.*;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.Scheduler;
 
 public abstract class CommandBase extends Command {
 
@@ -26,6 +27,10 @@ public abstract class CommandBase extends Command {
         claw       = Robot.claw;
 
         pneumatics = Robot.pneumatics;
+    }
+
+    protected void schedule(Command c) {
+        Scheduler.getInstance().add(c);
     }
 
     protected void initialize() {}
