@@ -1,17 +1,15 @@
 package org.usfirst.frc.team3501.robot.autons;
 
-import org.usfirst.frc.team3501.robot.Robot;
-
-import edu.wpi.first.wpilibj.command.CommandGroup;
+import org.usfirst.frc.team3501.bases.CommandGroup;
 
 public class ContainerOverStep extends CommandGroup {
 
     public ContainerOverStep() {
         super("ContainerOverStep");
 
-        requires(Robot.drivetrain);
-        requires(Robot.arm);
-        requires(Robot.claw);
+        requires(drivetrain);
+        requires(arm);
+        requires(claw);
 
         queueCommands();
     }

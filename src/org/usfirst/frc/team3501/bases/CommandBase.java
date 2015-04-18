@@ -1,9 +1,9 @@
 package org.usfirst.frc.team3501.bases;
 
-import org.usfirst.frc.team3501.robot.AutonData;
 import org.usfirst.frc.team3501.robot.OI;
 import org.usfirst.frc.team3501.robot.Robot;
 import org.usfirst.frc.team3501.robot.subsystems.*;
+import org.usfirst.frc.team3501.util.AutonData;
 
 public interface CommandBase {
 

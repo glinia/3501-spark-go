@@ -1,4 +1,4 @@
-package org.usfirst.frc.team3501.robot;
+package org.usfirst.frc.team3501.util;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

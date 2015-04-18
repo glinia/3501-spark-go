@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team3501.robot.autons.*;
 import org.usfirst.frc.team3501.robot.commands.*;
 import org.usfirst.frc.team3501.robot.subsystems.*;
+import org.usfirst.frc.team3501.util.AutonData;
 
 public class Robot extends IterativeRobot {
 
