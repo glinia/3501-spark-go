@@ -1,6 +1,6 @@
 package org.usfirst.frc.team3501.robot.commands;
 
-public class MoveArmFor extends CommandBase {
+public class MoveArmFor extends Command {
 
     private double speed;
 

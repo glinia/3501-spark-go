@@ -1,9 +1,8 @@
 package org.usfirst.frc.team3501.robot.autons;
 
-import org.usfirst.frc.team3501.robot.RobotMap;
-import org.usfirst.frc.team3501.robot.commands.CommandBase;
+import org.usfirst.frc.team3501.robot.commands.Command;
 
-public class DrivePastStep extends CommandBase {
+public class DrivePastStep extends Command {
 
     private double speed;
 
@@ -11,8 +10,8 @@ public class DrivePastStep extends CommandBase {
         super("DrivePastStep");
         requires(drivetrain);
 
-        setTimeout(RobotMap.PAST_STEP_TIME);
-        this.speed = RobotMap.PAST_STEP_SPEED;
+        setTimeout(autonData.getTime("drive_past_step"));
+        speed = autonData.getSpeed("drive_past_step");
     }
 
     protected void execute() {

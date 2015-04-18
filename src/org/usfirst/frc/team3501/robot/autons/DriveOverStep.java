@@ -1,9 +1,8 @@
 package org.usfirst.frc.team3501.robot.autons;
 
-import org.usfirst.frc.team3501.robot.RobotMap;
-import org.usfirst.frc.team3501.robot.commands.CommandBase;
+import org.usfirst.frc.team3501.robot.commands.Command;
 
-public class DriveOverStep extends CommandBase {
+public class DriveOverStep extends Command {
 
     private double speed;
 
@@ -11,8 +10,8 @@ public class DriveOverStep extends CommandBase {
         super("DriveOverStep");
         requires(drivetrain);
 
-        setTimeout(RobotMap.OVER_STEP_TIME);
-        speed = RobotMap.OVER_STEP_SPEED;
+        setTimeout(autonData.getTime("drive_over_step"));
+        speed = autonData.getSpeed("drive_over_step");
     }
 
     // TODO: this is an ugly "solution"

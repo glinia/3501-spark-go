@@ -1,6 +1,6 @@
 package org.usfirst.frc.team3501.robot.commands;
 
-public class MoveArm extends CommandBase {
+public class MoveArm extends Command {
 
     public MoveArm() {
         super("MoveArm");

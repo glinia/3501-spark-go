@@ -1,43 +1,19 @@
 package org.usfirst.frc.team3501.robot.commands;
 
+import org.usfirst.frc.team3501.robot.AutonData;
 import org.usfirst.frc.team3501.robot.OI;
 import org.usfirst.frc.team3501.robot.Robot;
 import org.usfirst.frc.team3501.robot.subsystems.*;
 
-import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.command.Scheduler;
+public interface CommandBase {
 
-public abstract class CommandBase extends Command {
+    final static OI oi = Robot.oi;
 
-    protected static OI oi;
+    final static AutonData autonData = Robot.autonData;
 
-    protected static Drivetrain drivetrain;
-    protected static Arm arm;
-    protected static Claw claw;
+    final static Drivetrain drivetrain = Robot.drivetrain;
+    final static               Arm arm = Robot.arm;
+    final static             Claw claw = Robot.claw;
 
-    protected static Pneumatics pneumatics;
-
-    public CommandBase(String commandName) {
-        super(commandName);
-
-        oi = Robot.oi;
-
-        drivetrain = Robot.drivetrain;
-        arm        = Robot.arm;
-        claw       = Robot.claw;
-
-        pneumatics = Robot.pneumatics;
-    }
-
-    protected void schedule(Command c) {
-        Scheduler.getInstance().add(c);
-    }
-
-    protected void initialize() {}
-
-    protected void execute() {}
-
-    protected void end() {}
-
-    protected void interrupted() {}
+    final static Pneumatics pneumatics = Robot.pneumatics;
 }

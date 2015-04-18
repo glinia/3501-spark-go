@@ -25,9 +25,4 @@ public class RobotMap {
     public static final int CLAW_FORWARD_CHANNEL = 0, CLAW_REVERSE_CHANNEL = 1;
 
     public static final Value OPEN = Value.kForward, CLOSED = Value.kReverse;
-
-    // auton
-    public static final double OVER_STEP_TIME = 1.2, OVER_STEP_SPEED = 0.7,
-                               PAST_STEP_TIME = 1.5, PAST_STEP_SPEED = 0.5,
-                               PICKUP_TIME    = 1.4, PICKUP_SPEED    = 0.5;
 }

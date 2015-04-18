@@ -1,6 +1,6 @@
 package org.usfirst.frc.team3501.robot.commands;
 
-public class CloseClaw extends CommandBase {
+public class CloseClaw extends Command {
 
     public CloseClaw() {
         super("CloseClaw");

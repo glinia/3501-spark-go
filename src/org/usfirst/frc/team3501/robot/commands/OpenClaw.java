@@ -1,6 +1,6 @@
 package org.usfirst.frc.team3501.robot.commands;
 
-public class OpenClaw extends CommandBase {
+public class OpenClaw extends Command {
 
     public OpenClaw() {
         super("OpenClaw");

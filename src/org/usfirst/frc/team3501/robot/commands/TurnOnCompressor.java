@@ -1,6 +1,6 @@
 package org.usfirst.frc.team3501.robot.commands;
 
-public class TurnOnCompressor extends CommandBase {
+public class TurnOnCompressor extends Command {
 
     public TurnOnCompressor() {
         super("TurnOnCompressor");

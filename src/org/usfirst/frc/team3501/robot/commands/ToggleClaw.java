@@ -1,6 +1,6 @@
 package org.usfirst.frc.team3501.robot.commands;
 
-public class ToggleClaw extends CommandBase {
+public class ToggleClaw extends Command {
 
     public ToggleClaw() {
         super("ToggleClaw");

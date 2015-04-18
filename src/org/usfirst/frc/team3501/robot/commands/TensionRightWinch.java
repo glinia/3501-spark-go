@@ -1,6 +1,6 @@
 package org.usfirst.frc.team3501.robot.commands;
 
-public class TensionRightWinch extends CommandBase {
+public class TensionRightWinch extends Command {
 
     private double speed;
 

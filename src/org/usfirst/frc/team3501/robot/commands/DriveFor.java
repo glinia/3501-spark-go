@@ -1,6 +1,6 @@
 package org.usfirst.frc.team3501.robot.commands;
 
-public class DriveFor extends CommandBase {
+public class DriveFor extends Command {
 
     private double speed;
 

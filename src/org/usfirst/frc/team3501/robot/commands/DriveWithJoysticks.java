@@ -1,6 +1,6 @@
 package org.usfirst.frc.team3501.robot.commands;
 
-public class DriveWithJoysticks extends CommandBase {
+public class DriveWithJoysticks extends Command {
 
     public DriveWithJoysticks() {
         super("DriveWithJoysticks");

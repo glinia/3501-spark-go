@@ -22,8 +22,9 @@ public class Robot extends IterativeRobot {
 
 	public static OI oi;
 
-	private SendableChooser autoChooser;
+	public static AutonData autonData;
 
+	private SendableChooser autonChooser;
     private Command autonomousCommand;
 
     public void robotInit() {
@@ -35,6 +36,8 @@ public class Robot extends IterativeRobot {
 
 		pneumatics = new Pneumatics();
 
+		autonData = new AutonData();
+
 		chooseAuto();
     }
 
@@ -45,7 +48,9 @@ public class Robot extends IterativeRobot {
     public void autonomousInit() {
         schedule(new TurnOnCompressor());
 
-        autonomousCommand = (Command) autoChooser.getSelected();
+        autonData.update();
+
+        autonomousCommand = (Command) autonChooser.getSelected();
         autonomousCommand.start();
     }
 
@@ -68,13 +73,13 @@ public class Robot extends IterativeRobot {
     }
 
     private void chooseAuto() {
-        autoChooser = new SendableChooser();
+        autonChooser = new SendableChooser();
 
-        autoChooser.addDefault("Pick up container", new ContainerOverStep());
-        autoChooser.addObject("Drive over step",    new DriveOverStep());
-        autoChooser.addObject("Drive past step",    new DrivePastStep());
+        autonChooser.addDefault("Pick up container", new ContainerOverStep());
+        autonChooser.addObject("Drive over step",    new DriveOverStep());
+        autonChooser.addObject("Drive past step",    new DrivePastStep());
 
-        SmartDashboard.putData("Auto Mode", autoChooser);
+        SmartDashboard.putData("Auto Mode", autonChooser);
     }
 
     private void schedule(Command c) {
