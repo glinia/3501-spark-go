@@ -1,5 +1,6 @@
 package org.usfirst.frc.team3501.robot.autons;
 
+import org.usfirst.frc.team3501.robot.Robot;
 import org.usfirst.frc.team3501.robot.RobotMap;
 import org.usfirst.frc.team3501.robot.commands.*;
 
@@ -9,6 +10,9 @@ public class PickUpContainer extends CommandGroup {
 
     public PickUpContainer() {
         super("PickUpContainer");
+
+        requires(Robot.arm);
+        requires(Robot.claw);
 
         queueCommands();
     }

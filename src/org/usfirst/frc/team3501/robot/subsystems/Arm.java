@@ -34,7 +34,7 @@ public class Arm extends Subsystem {
         left.set(0);
     }
 
-    public double getSpeedFromJoystick(double speed) {
+    private double getSpeedFromJoystick(double speed) {
         if (Math.abs(speed) < RobotMap.MIN_ARM_JOYSTICK_INPUT)
             speed = 0;
 

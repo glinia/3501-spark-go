@@ -25,7 +25,7 @@ public class Drivetrain extends Subsystem {
     public void drive(double forward, double twist) {
         if (Math.abs(forward) < RobotMap.MIN_DRIVE_JOYSTICK_INPUT)
             forward = 0;
-        if (Math.abs(twist) < RobotMap.MIN_DRIVE_JOYSTICK_INPUT)
+        if (Math.abs(twist)   < RobotMap.MIN_DRIVE_JOYSTICK_INPUT)
             twist = 0;
 
         robotDrive.arcadeDrive(
