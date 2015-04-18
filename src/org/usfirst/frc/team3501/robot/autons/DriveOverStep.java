@@ -1,6 +1,6 @@
 package org.usfirst.frc.team3501.robot.autons;
 
-import org.usfirst.frc.team3501.robot.commands.Command;
+import org.usfirst.frc.team3501.bases.Command;
 
 public class DriveOverStep extends Command {
 

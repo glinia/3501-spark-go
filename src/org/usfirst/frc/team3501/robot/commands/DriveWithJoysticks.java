@@ -1,5 +1,7 @@
 package org.usfirst.frc.team3501.robot.commands;
 
+import org.usfirst.frc.team3501.bases.Command;
+
 public class DriveWithJoysticks extends Command {
 
     public DriveWithJoysticks() {

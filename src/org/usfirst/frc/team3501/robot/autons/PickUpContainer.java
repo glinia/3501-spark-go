@@ -1,5 +1,6 @@
 package org.usfirst.frc.team3501.robot.autons;
 
+import org.usfirst.frc.team3501.bases.CommandGroup;
 import org.usfirst.frc.team3501.robot.Robot;
 import org.usfirst.frc.team3501.robot.commands.*;
 

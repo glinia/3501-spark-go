@@ -1,4 +1,4 @@
-package org.usfirst.frc.team3501.robot.commands;
+package org.usfirst.frc.team3501.bases;
 
 import org.usfirst.frc.team3501.robot.AutonData;
 import org.usfirst.frc.team3501.robot.OI;
