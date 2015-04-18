@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team3501.robot.autons.*;
+import org.usfirst.frc.team3501.robot.commands.*;
 import org.usfirst.frc.team3501.robot.subsystems.*;
 
 public class Robot extends IterativeRobot {
@@ -42,7 +43,7 @@ public class Robot extends IterativeRobot {
 	}
 
     public void autonomousInit() {
-        pneumatics.start();
+        schedule(new TurnOnCompressor());
 
         autonomousCommand = (Command) autoChooser.getSelected();
         autonomousCommand.start();
@@ -53,7 +54,7 @@ public class Robot extends IterativeRobot {
     }
 
     public void teleopInit() {
-        pneumatics.start();
+        schedule(new TurnOnCompressor());
 
         autonomousCommand.cancel();
     }
@@ -67,7 +68,7 @@ public class Robot extends IterativeRobot {
     }
 
     public void disabledInit() {
-        pneumatics.stop();
+        schedule(new TurnOffCompressor());
     }
 
     private void chooseAuto() {
@@ -78,5 +79,9 @@ public class Robot extends IterativeRobot {
         autoChooser.addObject("Drive past step",    new DrivePastStep());
 
         SmartDashboard.putData("Auto Mode", autoChooser);
+    }
+
+    private void schedule(Command c) {
+        Scheduler.getInstance().add(c);
     }
 }
