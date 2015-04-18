@@ -67,10 +67,6 @@ public class Robot extends IterativeRobot {
         LiveWindow.run();
     }
 
-    public void disabledInit() {
-        schedule(new TurnOffCompressor());
-    }
-
     private void chooseAuto() {
         autoChooser = new SendableChooser();
 
