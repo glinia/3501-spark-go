@@ -13,7 +13,9 @@ public class Joystick extends edu.wpi.first.wpilibj.Joystick {
     public Joystick(int port) {
         super(port);
 
-        IntStream.rangeClosed(1, 12).forEach((b) -> {
+        buttons = new HashMap<Integer, JoystickButton>();
+
+        IntStream.rangeClosed(1, getButtonCount()).forEach((b) -> {
             buttons.put(b, new JoystickButton(this, b));
         });
     }

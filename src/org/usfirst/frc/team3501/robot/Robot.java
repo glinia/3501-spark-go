@@ -29,8 +29,6 @@ public class Robot extends IterativeRobot {
     private Command autonomousCommand;
 
     public void robotInit() {
-		oi = new OI();
-
 		drivetrain = new Drivetrain();
 		arm        = new Arm();
 		claw       = new Claw();
@@ -38,6 +36,8 @@ public class Robot extends IterativeRobot {
 		pneumatics = new Pneumatics();
 
 		autonData = new AutonData();
+
+		oi = new OI();
 
 		chooseAuto();
     }
@@ -62,7 +62,8 @@ public class Robot extends IterativeRobot {
     public void teleopInit() {
         schedule(new TurnOnCompressor());
 
-        autonomousCommand.cancel();
+        if (autonomousCommand != null)
+            autonomousCommand.cancel();
     }
 
     public void teleopPeriodic() {

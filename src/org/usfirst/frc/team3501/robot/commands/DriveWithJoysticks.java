@@ -6,6 +6,7 @@ public class DriveWithJoysticks extends Command {
 
     public DriveWithJoysticks() {
         super("DriveWithJoysticks");
+
         requires(drivetrain);
     }
 
