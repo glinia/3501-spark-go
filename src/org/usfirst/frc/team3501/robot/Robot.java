@@ -15,36 +15,36 @@ import org.usfirst.frc.team3501.util.AutonData;
 
 public class Robot extends IterativeRobot {
 
-	public static Drivetrain drivetrain;
-	public static Arm arm;
-	public static Claw claw;
+    public static Drivetrain drivetrain;
+    public static Arm arm;
+    public static Claw claw;
 
-	public static Pneumatics pneumatics;
+    public static Pneumatics pneumatics;
 
-	public static OI oi;
+    public static OI oi;
 
-	public static AutonData autonData;
+    public static AutonData autonData;
 
-	private SendableChooser autonChooser;
+    private SendableChooser autonChooser;
     private Command autonomousCommand;
 
     public void robotInit() {
-		drivetrain = new Drivetrain();
-		arm        = new Arm();
-		claw       = new Claw();
+        drivetrain = new Drivetrain();
+        arm        = new Arm();
+        claw       = new Claw();
 
-		pneumatics = new Pneumatics();
+        pneumatics = new Pneumatics();
 
-		autonData = new AutonData();
+        autonData = new AutonData();
 
-		oi = new OI();
+        oi = new OI();
 
-		chooseAuto();
+        chooseAuto();
     }
 
-	public void disabledPeriodic() {
-		Scheduler.getInstance().run();
-	}
+    public void disabledPeriodic() {
+        Scheduler.getInstance().run();
+    }
 
     public void autonomousInit() {
         schedule(new TurnOnCompressor());
